@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Java-8-SpringAPI.iml" filepath="$PROJECT_DIR$/Java-8-SpringAPI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java-8-StreamAPI.iml" filepath="$PROJECT_DIR$/Java-8-StreamAPI.iml" />
     </modules>
   </component>
 </project>
