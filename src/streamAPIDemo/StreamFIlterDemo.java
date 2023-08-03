@@ -2,6 +2,7 @@ package streamAPIDemo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamFIlterDemo {
     public static void main(String[] args) {
@@ -15,6 +16,11 @@ public class StreamFIlterDemo {
         for(Product product : list) {
             System.out.println(product);
         }
+        System.out.println("********** Using Stream API ************");
+        List<Product> list1 = getProducts()
+                .stream().filter((product) -> product.getPrice() > 25000)
+                .collect(Collectors.toList());
+        list1.forEach(System.out::println);
 
     }
 
