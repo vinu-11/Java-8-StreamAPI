@@ -17,10 +17,14 @@ public class StreamFIlterDemo {
             System.out.println(product);
         }
         System.out.println("********** Using Stream API ************");
-        List<Product> list1 = getProducts()
-                .stream().filter((product) -> product.getPrice() > 25000)
-                .collect(Collectors.toList());
-        list1.forEach(System.out::println);
+//        List<Product> list1 = getProducts()
+//                .stream().filter((product) -> product.getPrice() > 25000)
+//                .collect(Collectors.toList());
+//        list1.forEach(System.out::println);
+        //Reduced On Line
+        getProducts()
+                .stream().filter(product -> product.getPrice() > 25000)
+                .forEach(System.out::println);
 
     }
 
