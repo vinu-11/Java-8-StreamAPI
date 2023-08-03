@@ -25,5 +25,8 @@ public class CreateStreamObjects {
         Stream<String> stream3 = set.stream();
         stream3.forEach(System.out::println);
 
+        String[] strArray = {"a","b","c"};
+        Stream<String> stream4 = Arrays.stream(strArray);
+        stream4.forEach(System.out::println);
     }
 }
