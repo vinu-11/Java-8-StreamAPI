@@ -46,6 +46,8 @@ public class StreamListSorting {
 
         // Sorting Based on Salary
 
+        System.out.println("******************* Sorting Based on Salary *****************************");
+
         List<Employee> employees = new ArrayList<Employee>();
         employees.add(new Employee(10,"Ramesh",25,25000));
         employees.add(new Employee(20,"Suresh",30,30000));
@@ -63,15 +65,25 @@ public class StreamListSorting {
         List<Employee> employeeSortedList1 = employees.stream()
                 .sorted(Comparator.comparingLong(Employee::getSalary))
                 .collect(Collectors.toList());
-        System.out.println(employeeSortedList1);
+        System.out.println("Ascending Order: " + employeeSortedList1);
 
         /* Descending Order Using Comparator Operator with reversed */
         List<Employee> employeeSortedList2 = employees.stream()
                 .sorted(Comparator.comparingLong(Employee::getSalary).reversed())
                 .collect(Collectors.toList());
-        System.out.println(employeeSortedList2);
+        System.out.println("Descending Order: " + employeeSortedList2);
 
+        // Sorting Based on Age
+        System.out.println("******************* Sorting Based on Age *****************************");
+        List<Employee> employeeSortedList3 = employees.stream()
+                .sorted(Comparator.comparingLong(Employee::getAge))
+                .collect(Collectors.toList());
+        System.out.println("Ascending Order: " + employeeSortedList3);
 
+        List<Employee> employeeSortedList4 = employees.stream()
+                .sorted(Comparator.comparingLong(Employee::getAge).reversed())
+                .collect(Collectors.toList());
+        System.out.println("Descending Order: " + employeeSortedList4);
 
 
     }
