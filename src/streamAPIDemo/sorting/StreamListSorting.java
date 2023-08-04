@@ -29,5 +29,18 @@ public class StreamListSorting {
         System.out.println(sortedList2);
         /* End */
 
+        /* Sorting Descending Using Stream */
+
+        List<String> sortedList3 = fruits.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList());
+        System.out.println(sortedList3);
+
+        List<String> sortedList4 = fruits.stream()
+                .sorted(((o1, o2) -> o2.compareTo(o1)))
+                .collect(Collectors.toList());
+        System.out.println(sortedList4);
+        /* End */
+
     }
 }
