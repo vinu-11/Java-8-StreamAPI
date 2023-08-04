@@ -1,7 +1,9 @@
 package streamAPIDemo.sorting;
 
+
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,6 +43,36 @@ public class StreamListSorting {
                 .collect(Collectors.toList());
         System.out.println(sortedList4);
         /* End */
+
+        // Sorting Based on Salary
+
+        List<Employee> employees = new ArrayList<Employee>();
+        employees.add(new Employee(10,"Ramesh",25,25000));
+        employees.add(new Employee(20,"Suresh",30,30000));
+        employees.add(new Employee(30,"Mangesh",40,28000));
+        employees.add(new Employee(40,"Nagesh",28,28000));
+        employees.add(new Employee(50,"Parmesh",35,40000));
+
+        /* Ascending Order using Lambda Function*/
+        List<Employee> emplyoeeSortedList = employees.stream()
+                .sorted((o1, o2) -> Double.compare(o1.getSalary(), o2.getSalary()))
+                .collect(Collectors.toList());
+        System.out.println(emplyoeeSortedList);
+
+        /* Using Comparator Operator */
+        List<Employee> employeeSortedList1 = employees.stream()
+                .sorted(Comparator.comparingLong(Employee::getSalary))
+                .collect(Collectors.toList());
+        System.out.println(employeeSortedList1);
+
+        /* Descending Order Using Comparator Operator with reversed */
+        List<Employee> employeeSortedList2 = employees.stream()
+                .sorted(Comparator.comparingLong(Employee::getSalary).reversed())
+                .collect(Collectors.toList());
+        System.out.println(employeeSortedList2);
+
+
+
 
     }
 }
