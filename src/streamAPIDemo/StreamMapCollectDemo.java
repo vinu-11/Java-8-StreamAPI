@@ -2,6 +2,7 @@ package streamAPIDemo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamMapCollectDemo {
 
@@ -20,10 +21,16 @@ public class StreamMapCollectDemo {
             userDetails.add(new UserDetail(user.getId(), user.getName(), user.getEmail()));
         }
 
-        for (UserDetail userDTO: userDetails
-             ) {
-            System.out.println(userDTO);
-        }
+//        for (UserDetail userDTO: userDetails
+//             ) {
+//            System.out.println(userDTO);
+//        }
+
+        //Using StreamAPI Map
+        List<UserDetail> userDetails1 = users.stream()
+                .map((User user) -> new UserDetail(user.getId(), user.getName(), user.getEmail()))
+                .collect(Collectors.toList());
+        userDetails1.forEach(System.out::println);
 
     }
 }
