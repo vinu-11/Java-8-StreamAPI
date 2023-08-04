@@ -75,15 +75,33 @@ public class StreamListSorting {
 
         // Sorting Based on Age
         System.out.println("******************* Sorting Based on Age *****************************");
+        //Ascending Order
         List<Employee> employeeSortedList3 = employees.stream()
-                .sorted(Comparator.comparingLong(Employee::getAge))
+                .sorted(Comparator.comparingInt(Employee::getAge))
                 .collect(Collectors.toList());
         System.out.println("Ascending Order: " + employeeSortedList3);
 
+        //Descending Order
         List<Employee> employeeSortedList4 = employees.stream()
-                .sorted(Comparator.comparingLong(Employee::getAge).reversed())
+                .sorted(Comparator.comparingInt(Employee::getAge).reversed())
                 .collect(Collectors.toList());
         System.out.println("Descending Order: " + employeeSortedList4);
+
+        // Sorting Based on Age
+        System.out.println("******************* Sorting Based on Name *****************************");
+        //Ascending Order
+        List<Employee> employeeSortedList5 = employees.stream()
+                .sorted(Comparator.comparing(Employee::getName))
+                .collect(Collectors.toList());
+        System.out.println("Ascending Order: " + employeeSortedList5);
+
+        //Descending Order
+        List<Employee> employeeSortedList6 = employees.stream()
+                .sorted(Comparator.comparing(Employee::getName).reversed())
+                .collect(Collectors.toList());
+        System.out.println("Descending Order: " + employeeSortedList6);
+
+
 
 
     }
