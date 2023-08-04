@@ -13,6 +13,17 @@ public class StreamMapCollectDemo {
         users.add(new User(30,"Shashi","shashi@gmail.com","vinay@1121"));
         users.add(new User(40,"Shivayogi","shivu@gmail.com","vinay@1121"));
 
+        //Using Traditional method
+        List<UserDetail> userDetails = new ArrayList<UserDetail>();
+        for (User user : users
+             ) {
+            userDetails.add(new UserDetail(user.getId(), user.getName(), user.getEmail()));
+        }
+
+        for (UserDetail userDTO: userDetails
+             ) {
+            System.out.println(userDTO);
+        }
 
     }
 }
